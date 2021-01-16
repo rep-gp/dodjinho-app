@@ -37,6 +37,10 @@ export default Vue.extend({
             this.selectedPiece = piece.name
             this.$emit('change-piece', piece.name)
         },
+        changeColor (color: string) {
+            (this.selectedColor as any)[this.selectedPiece] = color
+            this.$emit('color-changed', this.selectedColor)
+        },
         getRandomColor () {
             return this.colors[Math.floor(Math.random() * (this.colors.length - 1))]
         }
@@ -91,13 +95,20 @@ export default Vue.extend({
             margin-bottom: 10px;
         }
         & > .color-list {
-            border: 1px solid red;
             display: block;
+            position: relative;
             .color {
                 display: inline-block;
                 width: 30px;
                 height: 30px;
-                border-radius: 4px;
+                border-radius: 50%;
+                margin-right: 10px;
+                border: 2px solid transparent;
+                opacity: .4;
+                transition: 200ms ease;
+                &.--is-selected {
+                    opacity: 1;
+                }
             }
         }
     }
