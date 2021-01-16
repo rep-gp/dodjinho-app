@@ -1,16 +1,4 @@
 {
-  "Avatar": {
-    "description": "Auto imported from /components/avatar/Avatar.vue"
-  },
-  "LazyAvatar": {
-    "description": "Auto imported from /components/avatar/Avatar.vue"
-  },
-  "InputField": {
-    "description": "Auto imported from /components/common/InputField.vue"
-  },
-  "LazyInputField": {
-    "description": "Auto imported from /components/common/InputField.vue"
-  },
   "AvatarColorPicker": {
     "description": "Auto imported from /components/signup/AvatarColorPicker.vue"
   },
@@ -22,5 +10,17 @@
   },
   "LazySignupHeader": {
     "description": "Auto imported from /components/signup/SignupHeader.vue"
+  },
+  "Avatar": {
+    "description": "Auto imported from /components/avatar/Avatar.vue"
+  },
+  "LazyAvatar": {
+    "description": "Auto imported from /components/avatar/Avatar.vue"
+  },
+  "InputField": {
+    "description": "Auto imported from /components/common/InputField.vue"
+  },
+  "LazyInputField": {
+    "description": "Auto imported from /components/common/InputField.vue"
   }
 }
