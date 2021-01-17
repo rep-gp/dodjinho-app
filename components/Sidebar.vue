@@ -140,7 +140,7 @@ export default {
             width: $size;
             height: $size;
             border-radius: $size;
-            border: 1.3vw solid $grey-quartenary;
+            border: 1vw solid $grey-quartenary;
         }
 
         .spacer {

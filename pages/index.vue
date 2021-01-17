@@ -1,64 +1,54 @@
 <template>
-    <div class="signup-page">
-        <signup-header
-            @name-changed="onNameChanged"
-            @skin-color-changed="onSkinColorChanged"
-            @gender-changed="onGenderChanged"
-        />
-        <div class="avatar-display">
-            <avatar class="avatar" v-bind="avatar"/>
+    <div class="homepage">
+        <div class="background" />
+        <div class="logo">
+            <img src="/logo.png">
         </div>
-        <avatar-color-picker 
-            @color-changed="onColorChanged"
-        />
-        <div class="actions">
-            <flat-button dark title="Continuar" />
+
+        <div class="signup-button">
+            <flat-button title="Criar conta" @click="onSignupClicked" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import FlatButton from "~/components/common/FlatButton.vue"
-import SignupHeader from "~/components/signup/SignupHeader.vue"
+import Vue from 'vue'
 export default Vue.extend({
-    components: { SignupHeader, FlatButton },
-    data: () => ({
-        avatar: {}
-    }),
     methods: {
-        onNameChanged (name: string) {
-            console.log(name)
-        },
-        onSkinColorChanged (skinColor: string) {
-            this.avatar = { ...this.avatar, skin: skinColor }
-        },
-        onGenderChanged (gender: string) {
-            this.avatar = { ...this.avatar, gender }
-        },
-        onColorChanged (color: any) {
-            this.avatar = { ...this.avatar, ...color }
+        onSignupClicked () {
+            this.$router.push('/signup')
         }
     }
 })
 </script>
 
 <style lang="scss" scoped>
-.signup-page {
-    .avatar-display {
-        width: 100%;
-        height: 35vh;
-        background: #7A2EA3;
-        padding-top: 20px;
-        & > .avatar {
-            display: block;
-            margin: 0 auto;
+.homepage {
+    .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url('/home-bg.png');
+        background-size: cover;
+        z-index: -1;
+    }
+    .logo {
+        position: absolute;
+        top: 20vh;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
             width: 30vw;
         }
     }
-    .actions {
-        width: 60%;
-        margin: 0 auto;
+    .signup-button {
+        position: absolute;
+        width: 80vw;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20vh;
     }
 }
 </style>
