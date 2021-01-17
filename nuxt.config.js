@@ -65,7 +65,7 @@ export default {
             lang: 'pt',
             useWebmanifestExtension: false,
             background_color: '#645bd0',
-            theme_color: '#645bd0' 
+            theme_color: '#645bd0'
         }
     }
 }
