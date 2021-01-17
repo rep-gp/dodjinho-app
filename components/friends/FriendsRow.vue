@@ -1,6 +1,6 @@
 <template>
     <div class="friends-row">
-        <div class="avatar" />
+        <avatar-face class="spacer" bordered :data="avatar" :size="9" />
 
         <div class="info">
             {{ name }}
@@ -29,7 +29,7 @@ export default {
         name: { type: String, default: '' },
         points: { type: Number, default: 0 },
         credits: { type: Number, default: 0 },
-        avaatr: { type: undefined, default: null }
+        avatar: { type: undefined, default: null }
     }
 }
 </script>
@@ -44,14 +44,7 @@ export default {
     padding: 1vh 2vw;
     margin-bottom: 1vh;
 
-    .avatar {
-        $size: 10vw;
-        width: $size;
-        height: $size;
-        border-radius: $size;
-        border: 1vw solid $grey-quartenary;
-        margin-right: 2vw;
-    }
+    .spacer { margin-right: 2vw; }
 
     .info {
         font-size: 4.4vw;

@@ -20,11 +20,11 @@
         </div>
 
         <footer>
-            <div class="avatar" />
+            <avatar-face bordered />
 
             <div class="spacer" />
 
-            <div class="exit">
+            <div class="exit" @click="exit">
                 Sair
                 <exit-icon class="exit-icon" />
             </div>
@@ -37,6 +37,7 @@ import { mapState } from 'vuex'
 
 import PointsLabel from '@/components/label/PointsLabel'
 import CreditLabel from '@/components/label/CreditLabel'
+import AvatarFace from '@/components/avatar/AvatarFace'
 
 import ArrowIcon from '@/static/icons/arrow-left.svg'
 import BellIcon from '@/static/icons/bell.svg'
@@ -47,6 +48,7 @@ import ExitIcon from '@/static/icons/exit.svg'
 
 export default {
     components: {
+        AvatarFace,
         PointsLabel,
         CreditLabel,
         ArrowIcon,
@@ -83,6 +85,9 @@ export default {
     methods: {
         closeSidebar () {
             this.$store.dispatch('ui/setSidebarExpand', false)
+        },
+        exit () {
+            this.$router.push('/')
         }
     }
 }
@@ -134,14 +139,6 @@ export default {
         justify-content: center;
         align-items: center;
         margin-top: 30vh;
-
-        & > .avatar {
-            $size: 12vw;
-            width: $size;
-            height: $size;
-            border-radius: $size;
-            border: 1vw solid $grey-quartenary;
-        }
 
         .spacer {
             margin: 0 4vw;
