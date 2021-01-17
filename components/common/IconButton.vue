@@ -68,13 +68,14 @@ export default Vue.extend({
         border-radius: 8px;
         background: #ffffff;
         display: flex;
-        height: 6vw;
+        height: 8vw;
         padding: 1.5vw 2vw;
         justify-content: center;
         align-items: center;
         border: 2px solid transparent;
         transition: 200ms ease;
         .icon {
+            min-height: 8vh;
             width: 18px;
             &.--is-big {
                 max-height: 8vh;

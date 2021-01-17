@@ -23,7 +23,10 @@
                 <podium-svg class="avatar-podium" />
             </div>
 
-            <play-button class="play-button" />
+            <nuxt-link to="/find-match">
+                <play-button class="play-button" />
+            </nuxt-link>
+
         </div>
     </div>
 </template>

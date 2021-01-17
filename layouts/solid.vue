@@ -29,8 +29,8 @@ export default {
     components: {
         Sidebar,
         Userbar,
-        PointsLabel, 
-        CreditLabel, 
+        PointsLabel,
+        CreditLabel,
         MenuIcon,
         UsersIcon
     },
@@ -63,6 +63,7 @@ body {
     width: 100vw !important;
     height: 100vh !important;
     overflow: hidden !important;
+    a { text-decoration: none; }
     .application {
         position: absolute;
         top: 0;
