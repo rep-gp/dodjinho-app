@@ -69,10 +69,10 @@ export default {
             theme_color: '#645bd0'
         },
         icon: [
-            { src: 'icon.png', size: '128x128', type: 'image/png' },
-            { src: 'apple-touch-icon.png', size: '180x180', type: 'image/png' },
-            { src: 'android-chrome-192x192.png', size: '192x192', type: 'image/png' },
-            { src: 'android-chrome-512x512.png', size: '512x512', type: 'image/png' }
+            { src: '/icon.png', size: '128x128', type: 'image/png' },
+            { src: '/apple-touch-icon.png', size: '180x180', type: 'image/png' },
+            { src: '/android-chrome-192x192.png', size: '192x192', type: 'image/png' },
+            { src: '/android-chrome-512x512.png', size: '512x512', type: 'image/png' }
         ]
     }
 }
