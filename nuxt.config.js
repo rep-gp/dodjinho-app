@@ -67,7 +67,6 @@ export default {
             useWebmanifestExtension: false,
             background_color: '#645bd0',
             theme_color: '#645bd0'
-        },
-        icon: { fileName: 'icon.png' }
+        }
     }
 }

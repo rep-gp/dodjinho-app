@@ -16,6 +16,6 @@ export default function (context: any) {
         }
     })(navigator.userAgent || navigator.vendor || (window as any).opera);
     if (!isMobile) {
-        throw Error('Essa aplicação não possui uma versão desktop :(')
+        throw Error('Essa aplicação não possui uma versão desktop, entre pelo celular!')
     }
 }
