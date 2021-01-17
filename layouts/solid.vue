@@ -109,13 +109,13 @@ body {
 
 <style lang="scss" scoped>
 header {
-    padding: 20px;
+    padding: 4vw;
     display: flex;
     justify-content: space-between;
 
     .header-icon {
         fill: $white;
-        width: 2em;
+        width: 10vw;
     }
 }
 </style>

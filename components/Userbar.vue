@@ -1,23 +1,70 @@
 <template>
     <div :class="['userbar', { '--expanded': userbarExpanded }]">
-        <header>
-            <div class="userbar-close" @click="closeUserbar">
-                >
-            </div>
-        </header>
+        <arrow-icon class="userbar-arrow" @click="closeUserbar" />
+
+        <input-field
+            label="Procurar amigos"
+            :value="search"
+            bordered blue icon
+            @input="onInput"
+        />
+
+        <toggle class="toggle" :options="['Amigos', 'Grupo']" @toggle="onToggle" />
+
+        <div class="friends">
+            <friends-row
+                v-for="(friend, index) in filteredFriends"
+                :key="index + friend.name"
+                v-bind="friend"
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 
+import FriendsRow from '@/components/friends/FriendsRow'
+import Toggle from '@/components/common/Toggle'
+import InputField from '@/components/common/InputField'
+
+import ArrowIcon from '@/static/icons/arrow-left.svg'
+
 export default {
-    computed: {
-        ...mapState('ui', ['userbarExpanded'])
+    components: {
+        Toggle,
+        InputField,
+        FriendsRow,
+        ArrowIcon
     },
+
+  
+    data () {
+        return {
+            search: ''
+        }
+    },
+
+    computed: {
+        ...mapState('ui', ['userbarExpanded']),
+        ...mapState('user', ['userFriends']),
+        filteredFriends () {
+            return this.userFriends.filter(u => JSON.stringify(u).match(new RegExp(this.search, 'i')))
+        }
+    },
+
     methods: {
+        onToggle (s) {
+            console.log(s)
+        },
         closeUserbar () {
             this.$store.dispatch('ui/setUserbarExpand', false)
+        },
+        onInput (param) {
+            this.search = param
+        },
+        onChange (param) {
+            console.log(param, 'change')
         }
     }
 }
@@ -42,15 +89,27 @@ export default {
         visibility: visible;
         transition: $ease-in;
         width: $userbar-width;
+
+        .friends {
+            transition: .4s;
+            opacity: 1;
+        }
     }
 
-    header {
-        display: flex;
-        justify-content: flex-end;
+    &-arrow {
+        width: 5vw;
+        margin-bottom: 5vw;
+        fill: $blue-main;
+        transform: rotate(180deg);
     }
 
-    &-close {
-        border: 1px solid red;
+    .toggle {
+        margin: 4vh 0 2vh;
+    }
+    
+    .friends {
+        opacity: 0;
+        transition: $ease-out;
     }
 }
 </style>
