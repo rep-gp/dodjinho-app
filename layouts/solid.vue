@@ -89,7 +89,7 @@ body {
             left: 0;
             right: 0;
             background: #00000044;
-            z-index: 0;
+            z-index: 998;
         }
 
         overflow: hidden;
