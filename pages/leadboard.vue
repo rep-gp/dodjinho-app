@@ -30,22 +30,22 @@
             <div class="champion">
                 <div class="avatar-container"><avatar /></div>
                 <span>3rd</span>
-                <span>Nome</span>
-                <span>Score</span>
+                <span>Oscar</span>
+                <span>1180 pts</span>
             </div>
 
             <div class="champion">
                 <div class="avatar-container"><avatar /></div>
                 <span>1st</span>
-                <span>Nome</span>
-                <span>Score</span>
+                <span>Frederico</span>
+                <span>1560 pts</span>
             </div>
 
             <div class="champion">
                 <div class="avatar-container"><avatar /></div>
                 <span>2nd</span>
-                <span>Nome</span>
-                <span>Score</span>
+                <span>Fontes</span>
+                <span>1370 pts</span>
             </div>
         </div>
 
@@ -54,32 +54,32 @@
                 <span class="rank">4th</span>
                 <div>
                     <div class="avatar-container"><avatar /></div>
-                    <span>Nome</span>
-                    <span>Score</span>
+                    <span>Humberto</span>
+                    <span>930 pts</span>
                 </div>
             </li>
             <li>
                 <span class="rank">5th</span>
                 <div>
                     <div class="avatar-container"><avatar /></div>
-                    <span>Nome</span>
-                    <span>Score</span>
+                    <span>Guilherme</span>
+                    <span>820 pts</span>
                 </div>
             </li>
             <li>
                 <span class="rank">6th</span>
                 <div>
                     <div class="avatar-container"><avatar /></div>
-                    <span>Nome</span>
-                    <span>Score</span>
+                    <span>Jonathan</span>
+                    <span>760 pts</span>
                 </div>
             </li>
             <li>
                 <span class="rank">7th</span>
                 <div>
                     <div class="avatar-container"><avatar /></div>
-                    <span>Nome</span>
-                    <span>Score</span>
+                    <span>Bruno</span>
+                    <span>650 pts</span>
                 </div>
             </li>
         </ol>
