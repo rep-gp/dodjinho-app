@@ -54,7 +54,9 @@
             </div>
         </div>
 
-        <flat-button title="Procurar Partida" />
+        <flat-button title="Procurar Partida" @click="toggleSearch"/>
+
+        <search-party :visible="search" @cancel-search="toggleSearch"/>
     </div>
 </template>
 
@@ -65,6 +67,11 @@ import ArrowLeft from '@/static/icons/arrow-left.svg'
 export default Vue.extend({
     layout: 'solid',
     components: { ArrowLeft },
+    data() {
+        return {
+            search: false
+        }
+    },
     computed: {
         subjectList () {
             return [
@@ -75,6 +82,11 @@ export default Vue.extend({
                 { icon: 'lightbulb', label: 'Cultura' },
                 { icon: 'chemistry', label: 'Química' }
             ]
+        }
+    },
+    methods: {
+        toggleSearch() {
+            this.search = !this.search
         }
     }
 
