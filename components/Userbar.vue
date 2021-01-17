@@ -44,7 +44,6 @@ export default {
         ArrowIcon
     },
 
-  
     data () {
         return {
             search: ''
@@ -60,8 +59,10 @@ export default {
     },
 
     methods: {
-        onToggle (s) {
-            console.log(s)
+        onToggle (selection) {
+            if (selection === 'Grupo') {
+                this.showWipModal('Ver grupo')
+            }
         },
         closeUserbar () {
             this.$store.dispatch('ui/setUserbarExpand', false)

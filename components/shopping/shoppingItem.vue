@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="item-trade">
+        <div class="item-trade" @click="showWipModal('Trocar moedas')">
             <p>Trocar</p>
             <exchange-icon />
         </div>
