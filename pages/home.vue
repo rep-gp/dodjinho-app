@@ -8,7 +8,7 @@
                     <guild-svg />
                     <p>Clã GP</p>
                 </div>
-                <p>{{ userData.name }}</p>
+                <p class="user-name">{{ userData.name }}</p>
             </div>
 
             <div class="user-badges">
@@ -87,9 +87,11 @@ export default Vue.extend({
             align-items: center;
             margin-left: 3vw;
             width: 65vw;
-            justify-content: space-around;
 
-            p {
+            .user-name {
+                position: relative;
+                left: 45%;
+                transform: translateX(-50%);
                 color: $white;
                 font-weight: bold;
                 font-size: 2.5vh;
