@@ -22,8 +22,6 @@
         <footer>
             <avatar-face bordered />
 
-            <!-- <div class="spacer" /> -->
-
             <div class="exit" @click="exit">
                 Sair
                 <exit-icon class="exit-icon" />
@@ -87,7 +85,10 @@ export default {
             this.$store.dispatch('ui/setSidebarExpand', false)
         },
         goTo (name) {
-            if (!name) { return }
+            if (!name) {
+                this.showWipModal('Ver notificações')
+                return
+            }
             this.$router.push({ name })
         },
         exit () {

@@ -20,6 +20,7 @@
         "nuxt-svg-loader": "^1.2.0",
         "nuxt-vuex-localstorage": "^1.2.7",
         "sass-loader": "^10.1.1",
+        "vue-js-modal": "^2.0.0-rc.6",
         "vue-lottie": "^0.2.1"
     },
     "devDependencies": {

@@ -19,7 +19,7 @@
 
             <highligth-svg class="highlight"/>
             <div class="user-avatar">
-                <avatar />
+                <avatar v-bind="avatar" />
                 <podium-svg class="avatar-podium" />
             </div>
 
@@ -33,6 +33,7 @@
 
 <script lang="ts">
 import Vue from "vue"
+import{ mapState } from 'vuex'
 import GuildSvg from '@/static/illustrations/user-guild.svg'
 import PodiumSvg from '@/static/illustrations/podium.svg'
 import HighligthSvg from '@/static/illustrations/highlight.svg'
@@ -45,6 +46,9 @@ export default Vue.extend({
             event: false,
             badgesList: ['geography', 'science', 'technology', 'history']
         }
+    },
+    computed: {
+        ...mapState('user', ['avatar'])
     },
     mounted() {
         setTimeout(() => {
