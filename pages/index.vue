@@ -11,14 +11,18 @@
         <avatar-color-picker 
             @color-changed="onColorChanged"
         />
+        <div class="actions">
+            <flat-button dark title="Continuar" />
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
+import FlatButton from "~/components/common/FlatButton.vue"
 import SignupHeader from "~/components/signup/SignupHeader.vue"
 export default Vue.extend({
-    components: { SignupHeader },
+    components: { SignupHeader, FlatButton },
     data: () => ({
         avatar: {}
     }),
@@ -51,6 +55,10 @@ export default Vue.extend({
             margin: 0 auto;
             width: 30vw;
         }
+    }
+    .actions {
+        width: 60%;
+        margin: 0 auto;
     }
 }
 </style>

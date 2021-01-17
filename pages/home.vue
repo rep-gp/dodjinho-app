@@ -39,7 +39,7 @@ export default Vue.extend({
     layout: 'solid',
     data() {
         return {
-            badgesList: ['geography', 'science', 'computation', 'history']
+            badgesList: ['geography', 'science', 'technology', 'history']
         }
     },
     components: {
@@ -101,14 +101,15 @@ export default Vue.extend({
 
         .user-badges {
             position: relative;
-            width: 14vw;
+            width: 16vw;
             align-self: flex-end;
             top: -6vh;
             margin-left: 5vw;
 
             .badge {
+                height: 6vh;
                 width: 6vh;
-                margin-bottom: 2vh;
+                margin-bottom: 5vh;
             }
         }
 

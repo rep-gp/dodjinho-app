@@ -23,10 +23,12 @@ import ShieldIcon from '@/static/icons/shield.svg'
 import MedalIcon from '@/static/icons/medal.svg'
 
 /* Subjects Icons */
+import ChemistryIcon from '@/static/icons/chemistry.svg'
 import GeographyIcon from '@/static/icons/geography.svg'
-import ScienceIcon from '@/static/icons/science.svg'
-import ComputationIcon from '@/static/icons/computation.svg'
 import HistoryIcon from '@/static/icons/history.svg'
+import LightbulbIcon from '@/static/icons/lightbulb.svg'
+import ScienceIcon from '@/static/icons/science.svg'
+import TechnologyIcon from '@/static/icons/technology.svg'
 
 export default Vue.extend({
     props: {
@@ -46,10 +48,12 @@ export default Vue.extend({
                 'multiple-users': MultipleUsersIcon,
                 'pen': PenIcon,
                 'shield': ShieldIcon,
+                'chemistry': ChemistryIcon,
                 'geography': GeographyIcon,
+                'history': HistoryIcon,
+                'lightbulb': LightbulbIcon,
                 'science': ScienceIcon,
-                'computation': ComputationIcon,
-                'history': HistoryIcon
+                'technology': TechnologyIcon,
             }
         }
     }
@@ -58,7 +62,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .icon-button {
-    width: 100%;
+    width: inherit;
+    height: inherit;
     & > .box {
         border-radius: 8px;
         background: #ffffff;
@@ -69,14 +74,17 @@ export default Vue.extend({
         align-items: center;
         border: 2px solid transparent;
         transition: 200ms ease;
-        &.--is-big {
-            height: 9vw;
-        }
         .icon {
-            max-width: 6vh;
+            width: 18px;
             &.--is-big {
-                height: 100%
+                max-height: 8vh;
+                width: 100%;
             }
+        }
+        &.--is-big {
+            padding: 3vw 2vw;
+            height: inherit;
+            width: inherit;
         }
         &.--is-selected {
             background: #f5f5f5;
@@ -102,8 +110,7 @@ export default Vue.extend({
         position: absolute;
         right: 50%;
         height: 5vh;
-        transform: translate(-30%, 50%);
+        transform: translate(-30%, 60%);
     }
-
 }
 </style>

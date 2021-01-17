@@ -5,7 +5,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
     props: {
         title: {type: String, default: 'Placeholder'},
         iconName: {type: String, default: ''},
@@ -27,7 +29,7 @@ export default {
         }
     }
 
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -41,6 +43,7 @@ export default {
         margin: 0 auto 0 auto;
         border-radius: 6px;
         background-color: $white;
+        box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.12);
 
         &.--is-dark { background-color: $blue-secundary; }
         &.--is-dark p {
@@ -53,19 +56,19 @@ export default {
         &.--is-disabled p {
             color: $grey-secundary;
         }
+        &:hover {
+            opacity: 80%;
+            &.--is-disabled { opacity: 100%; }
+        }
 
-        box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.12);
+
     }
 
-    .button-container:hover {
-        opacity: 80%;
-        &.--is-disabled { opacity: 100%; }
-    }
 
     .button-text {
         margin: 0 auto 0 auto;
         font-weight: 700;
-        font-size: 7vw;
+        font-size: 6vw;
         color: $blue-main;
 
         &.--is-dark { color: $white; }

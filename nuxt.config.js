@@ -15,7 +15,7 @@ export default {
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
     css: [],
-    
+
     // Global style files
     styleResources: {
         scss: [
@@ -51,4 +51,18 @@ export default {
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},
+
+    router: {
+        middleware: ['mobile']
+    },
+
+    pwa: {
+        manifest: {
+            name: 'e-duca',
+            lang: 'pt',
+            useWebmanifestExtension: false,
+            background_color: '#645bd0',
+            theme_color: '#645bd0' 
+        }
+    }
 }
