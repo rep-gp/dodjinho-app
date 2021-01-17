@@ -80,47 +80,47 @@ export default {
             timeInterval: null,
             adversaryInterval: null,
             players: [
-                { name: 'Player 1', points: 1000, score: 0 },
-                { name: 'Player 2', points: 2000, score: 0 }
+                { name: 'Player 1', points: 280, score: 0 },
+                { name: 'Rafael', points: 300, score: 0 }
             ],
             questionCounter: 1,
             questions: [
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sequi maxime mollitia laboriosam ratione quam architecto, quo numquam rem accusantium 1',           
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sequi maxime mollitia laboriosam ratione quam architecto, quo numquam rem accusantium 2',            
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sequi maxime mollitia laboriosam ratione quam architecto, quo numquam rem accusantium 3',            
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sequi maxime mollitia laboriosam ratione quam architecto, quo numquam rem accusantium 4',            
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sequi maxime mollitia laboriosam ratione quam architecto, quo numquam rem accusantium 5'            
+                'De quem é a famosa frase “Penso, logo existo”?',           
+                'Qual é o menor e o maior país do mundo?',            
+                'Quem é o autor de “O Príncipe”?',            
+                'De que são constituídos os diamantes?',            
+                'Qual a montanha mais alta do Brasil?'            
             ],
             answers: [
                 [
-                    { text: 'Lorem ipsum dolor sit amet 1', correct: true },
-                    { text: 'Lorem ipsum dolor sit amet 1', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 1', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 1', correct: false }
+                    { text: 'Platão', correct: false },
+                    { text: 'Descartes', correct: true },
+                    { text: 'Sócrates', correct: false },
+                    { text: 'Galileu Galilei', correct: false }
                 ],
                 [
-                    { text: 'Lorem ipsum dolor sit amet 2', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 2', correct: true },
-                    { text: 'Lorem ipsum dolor sit amet 2', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 2', correct: false }
+                    { text: 'Vaticano e Rússia', correct: true },
+                    { text: 'Mônaco e Canadá', correct: false },
+                    { text: 'Índia e China', correct: false },
+                    { text: 'Chile e Brasil', correct: false }
                 ],
                 [
-                    { text: 'Lorem ipsum dolor sit amet 3', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 3', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 3', correct: true },
-                    { text: 'Lorem ipsum dolor sit amet 3', correct: false }
+                    { text: 'Montesquieu', correct: false },
+                    { text: 'Rousseau', correct: false },
+                    { text: 'Maquiavel', correct: true },
+                    { text: 'Thomas Hobbes', correct: false }
                 ],
                 [
-                    { text: 'Lorem ipsum dolor sit amet 4', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 4', correct: true },
-                    { text: 'Lorem ipsum dolor sit amet 4', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 4', correct: false }
+                    { text: 'Grafite', correct: false },
+                    { text: 'Rênio', correct: false },
+                    { text: 'Ósmio', correct: false },
+                    { text: 'Carbono', correct: true }
                 ],
                 [
-                    { text: 'Lorem ipsum dolor sit amet 5', correct: true },
-                    { text: 'Lorem ipsum dolor sit amet 5', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 5', correct: false },
-                    { text: 'Lorem ipsum dolor sit amet 5', correct: false }
+                    { text: 'Pico da Neblina', correct: true },
+                    { text: 'Pico Paraná', correct: false },
+                    { text: 'Monte Roraima', correct: false },
+                    { text: 'Pico da Bandeira', correct: false }
                 ]
             ],
             showRightAnswer: false,
