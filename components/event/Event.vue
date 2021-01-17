@@ -36,7 +36,7 @@ export default {
 .event-container {
     display: flex;
     align-items: center;
-    height: 8vh;
+    height: 10vh;
     width: 80vw;
     border-radius: 6px 0px 0px 6px;
     background-color: $white;

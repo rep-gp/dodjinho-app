@@ -57,14 +57,13 @@ export default Vue.extend({
     flex: 1;
 
     .home-event {
-        margin-top: 2vh;
         align-self: flex-end;
     }
 
     .home-content {
         display: flex;
         flex-direction: column;
-        margin: 2vh;
+        margin: 1vh 2vh 2vh 2vh;
 
         .user-info {
             display: flex;
@@ -110,6 +109,7 @@ export default Vue.extend({
                 height: 6vh;
                 width: 6vh;
                 margin-bottom: 5vh;
+                z-index: 9;
             }
         }
 
@@ -118,7 +118,7 @@ export default Vue.extend({
             flex-direction: column;
             align-self: center;
             position: relative;
-            top: -25vh;
+            top: -42vh;
             svg {
                 height: 40vh;
                 z-index: 10;
@@ -136,12 +136,14 @@ export default Vue.extend({
             position: relative;
             width: 95%;
             margin: 0 auto 0 auto;
-            top: -25vh;
+            top: -45vh;
             width: 95%;
+            z-index: 9;
         }
 
         .highlight {
             display: flex;
+            z-index: 8;
             align-self: center;
             position: absolute
         }

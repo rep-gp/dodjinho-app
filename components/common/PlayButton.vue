@@ -33,8 +33,9 @@ export default {
     padding-left: 5vw;
     background-color: $white;
 
-    .play-button-container:hover {
+    &:hover {
         opacity: 80%;
+        &.--is-disabled { opacity: 100%; }
     }
 
     .button-text {
