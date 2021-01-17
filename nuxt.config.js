@@ -53,6 +53,16 @@ export default {
     build: {},
 
     router: {
-        middleware: 'mobile'
+        middleware: ['mobile']
+    },
+
+    pwa: {
+        manifest: {
+            name: 'e-duca',
+            lang: 'pt',
+            useWebmanifestExtension: false,
+            background_color: '#645bd0',
+            theme_color: '#645bd0' 
+        }
     }
 }
