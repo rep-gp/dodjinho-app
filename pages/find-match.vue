@@ -49,6 +49,8 @@
                 </icon-button>
             </div>
         </div>
+
+        <flat-button title="Procurar Partida" />
     </div>
 </template>
 
@@ -95,7 +97,7 @@ export default Vue.extend({
         }
     }
     & > .subjects {
-        margin-top: 40px;
+        margin: 40px 0;
         & > .options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
