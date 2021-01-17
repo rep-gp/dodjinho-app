@@ -7,7 +7,6 @@
             <credit-label class="credit" :value="1000" big/>
         </div>
 
-
         <h2> Categorias </h2>
 
         <div class="categories">
@@ -103,10 +102,11 @@ export default {
     }
 
     h1 {
-        font-size: 4vh;
+        font-size: 5vh;
         text-align: center;
         color: $white;
         margin-top: 0;
+        margin-bottom: 2vh;
     }
 
     h2 {

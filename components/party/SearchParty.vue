@@ -55,7 +55,7 @@ export default Vue.extend({
     .blur {
         position: absolute;
         width: 100%;
-        height: 45vh;
+        height: 100vh;
         background-color: $grey-tertiary;
         opacity: 0.4;
     }
@@ -76,6 +76,7 @@ export default Vue.extend({
         box-shadow: 0px -8px 24px -5px rgba(0,0,0,0.75);
 
         p {
+            margin-top: 2vh;
             font-size: 3vh;
             color: $blue-main;
             font-weight: bold;
@@ -97,13 +98,15 @@ export default Vue.extend({
                 }
 
                 .value {
+                    font-size: 2.4vh;
                     color: $grey-secundary
                 }
             }
         }
 
         .cancel-button {
-            margin-top: 2vh;
+            margin-top: auto;
+            margin-bottom: 5vh;
             height: 8vh;
             width: 85%;
             background-color: $red;

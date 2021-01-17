@@ -48,7 +48,7 @@ export default {
     }
 
     &.--is-big {
-        font-size: 10vw;
+        font-size: 9vw;
         width: 100%;
         justify-content: center;
 
@@ -57,7 +57,7 @@ export default {
         }
 
         .credit-label-icon {
-            width: 28vw;
+            width: 26vw;
             margin-right: -5vw;
         }
     }

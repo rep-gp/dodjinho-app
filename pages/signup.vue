@@ -8,7 +8,7 @@
         <div class="avatar-display">
             <avatar class="avatar" v-bind="avatar"/>
         </div>
-        <avatar-color-picker 
+        <avatar-color-picker
             @color-changed="onColorChanged"
         />
         <div class="actions">
@@ -22,15 +22,16 @@ import Vue from "vue"
 import { mapActions } from 'vuex'
 import FlatButton from "~/components/common/FlatButton.vue"
 import SignupHeader from "~/components/signup/SignupHeader.vue"
+
 export default Vue.extend({
     components: { SignupHeader, FlatButton },
     data: () => ({
         avatar: {}
     }),
     methods: {
-        ...mapActions('user', ['setUserAvatar']),
+        ...mapActions('user', ['setUserAvatar', 'setUserData']),
         onNameChanged (name: string) {
-            console.log(name)
+            this.setUserData({name})
         },
         onSkinColorChanged (skinColor: string) {
             this.avatar = { ...this.avatar, skin: skinColor }
