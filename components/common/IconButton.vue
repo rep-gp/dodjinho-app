@@ -1,5 +1,5 @@
 <template>
-    <div class="icon-button">
+    <div class="icon-button" @click="clicked">
         <div :class="['box', { '--is-selected': selected, '--is-big': bigIcon }]">
             <component :class="['icon', { '--is-big': bigIcon }]" :is="iconMapping[icon]"/>
             <div v-if='!bigIcon && hasSlot' class="text">
@@ -56,6 +56,11 @@ export default Vue.extend({
                 'technology': TechnologyIcon,
             }
         }
+    },
+    methods: {
+        clicked() {
+            this.$emit('click')
+        }
     }
 })
 </script>
@@ -88,7 +93,7 @@ export default Vue.extend({
             width: inherit;
         }
         &.--is-selected {
-            background: #f5f5f5;
+            background: #bfc3ee;
             border: 2px solid $icon-secundary;
         }
     }
@@ -111,7 +116,7 @@ export default Vue.extend({
         position: absolute;
         right: 50%;
         height: 5vh;
-        transform: translate(-30%, 60%);
+        transform: translate(-4vw, 3.5vh);
     }
 }
 </style>

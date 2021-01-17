@@ -63,6 +63,9 @@ body {
     width: 100vw !important;
     height: 100vh !important;
     overflow: hidden !important;
+    outline: none;
+    user-select: none;
+    -webkit-touch-callout: none;
     a { text-decoration: none; }
     .application {
         position: absolute;

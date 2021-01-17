@@ -10,14 +10,8 @@
                 Solo
             </div>
             <div class="options">
-                <icon-button icon="single-user">
-                    1x1
-                </icon-button>
-                <icon-button icon="multiple-users">
-                    3x3
-                </icon-button>
-                <icon-button icon="pen">
-                    Treino
+                <icon-button v-for="item in optionsList.solo" :key="item.label" :icon="item.icon" @click="selectMode(item)" :selected="item.label === selectedMode.mode && !selectedMode.group">
+                    {{ item.label }}
                 </icon-button>
             </div>
         </div>
@@ -26,14 +20,8 @@
                 Grupo
             </div>
             <div class="options">
-                <icon-button icon="single-user">
-                    1x1
-                </icon-button>
-                <icon-button icon="multiple-users">
-                    3x3
-                </icon-button>
-                <icon-button icon="shield">
-                    Grupo
+                <icon-button v-for="item in optionsList.group" :key="item.label" :icon="item.icon" @click="selectMode(item, true)" :selected="item.label === selectedMode.mode && selectedMode.group">
+                    {{ item.label }}
                 </icon-button>
             </div>
         </div>
@@ -48,13 +36,17 @@
                     :key="subject.label"
                     :icon="subject.icon"
                     big-icon
+                    @click="selectSubject(subject.label)"
+                    :selected="selectedSubjects.includes(subject.label)"
                 >
                     {{ subject.label }}
                 </icon-button>
             </div>
         </div>
 
-        <flat-button title="Procurar Partida" />
+        <flat-button title="Procurar Partida" @click="toggleSearch"/>
+
+        <search-party :visible="search" @cancel-search="toggleSearch" :mode="selectedMode" :subjects="selectedSubjects"/>
     </div>
 </template>
 
@@ -65,7 +57,31 @@ import ArrowLeft from '@/static/icons/arrow-left.svg'
 export default Vue.extend({
     layout: 'solid',
     components: { ArrowLeft },
+    data() {
+        return {
+            selectedMode: {
+                group: false,
+                mode: ''
+            },
+            selectedSubjects: [],
+            search: false
+        }
+    },
     computed: {
+        optionsList() {
+            return {
+                solo: [
+                    { icon: 'single-user' , label: '1x1'},
+                    { icon: 'multiple-users' , label: '3x3'},
+                    { icon: 'pen' , label: 'Treino'}
+                ],
+                group: [
+                    { icon: 'single-user' , label: '1x1'},
+                    { icon: 'multiple-users' , label: '3x3'},
+                    { icon: 'shield' , label: 'Grupo'}
+                ]
+            }
+        },
         subjectList () {
             return [
                 { icon: 'technology', label: 'Tecnologia' },
@@ -76,6 +92,28 @@ export default Vue.extend({
                 { icon: 'chemistry', label: 'Química' }
             ]
         }
+    },
+    methods: {
+        toggleSearch() {
+            this.search = !this.search
+        },
+        selectMode(item: any, group?: boolean) {
+            if(group) this.selectedMode.group = true
+            else this.selectedMode.group = false
+
+            this.selectedMode.mode = item.label
+        },
+        selectSubject(item: any) {
+            let arr: string[] = this.selectedSubjects
+
+            if(arr.includes(item)){
+                arr = arr.filter(a => a !== item)
+            } else {
+                arr.push(item)
+            }
+
+            this.selectedSubjects = arr as never[]
+        }
     }
 
 })
@@ -84,10 +122,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .find-match {
     width: 100%;
-    padding: 20px;
+    padding: 1vh 5vw;
     box-sizing: border-box;
     & > .header {
-        height: 7.5vh;
+        height: 5vh;
 
         svg {
             height: 4vh;
@@ -97,22 +135,22 @@ export default Vue.extend({
     .title {
         font-weight: bold;
         color: #ffffff;
-        font-size: 14pt;
-        margin-top: 15px;
+        font-size: 2.5vh;
+        margin-top: 2vh;
     }
     & > .solo-matching, & > .group-matching {
         .options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 2vw;
         }
     }
     & > .subjects {
-        margin: 40px 0;
+        margin: 5vh 0;
         & > .options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 2vw;
         }
     }
 }

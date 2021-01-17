@@ -66,7 +66,7 @@ export default Vue.extend({
     .button-text {
         margin: 0 auto 0 auto;
         font-weight: 700;
-        font-size: 6vw;
+        font-size: 5vw;
         color: $blue-main;
 
         &.--is-dark { color: $white; }
