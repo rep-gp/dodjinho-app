@@ -2,11 +2,13 @@
     <div class="icon-button">
         <div :class="['box', { '--is-selected': selected, '--is-big': bigIcon }]">
             <component :class="['icon', { '--is-big': bigIcon }]" :is="iconMapping[icon]"/>
-            <div v-if='!bigIcon' class="text">
+            <div v-if='!bigIcon && hasSlot' class="text">
                 <slot />
             </div>
+
+            <medal-icon class="medal-icon" v-if="medal"/>
         </div>
-        <div v-if='bigIcon' class="text subbed">
+        <div v-if='bigIcon && hasSlot' class="text subbed">
             <slot />
         </div>
     </div>
@@ -18,6 +20,9 @@ import SingleUserIcon from '@/static/icons/single-user.svg'
 import MultipleUsersIcon from '@/static/icons/multiple-users.svg'
 import PenIcon from '@/static/icons/pen.svg'
 import ShieldIcon from '@/static/icons/shield.svg'
+import MedalIcon from '@/static/icons/medal.svg'
+
+/* Subjects Icons */
 import ChemistryIcon from '@/static/icons/chemistry.svg'
 import GeographyIcon from '@/static/icons/geography.svg'
 import HistoryIcon from '@/static/icons/history.svg'
@@ -27,17 +32,16 @@ import TechnologyIcon from '@/static/icons/technology.svg'
 
 export default Vue.extend({
     props: {
-        icon: {
-            type: String
-        },
-        selected: {
-            type: Boolean
-        },
-        bigIcon: {
-            type: Boolean
-        }
+        icon: { type: String },
+        selected: { type: Boolean },
+        bigIcon: { type: Boolean },
+        medal: { type: Boolean }
     },
+    components: { MedalIcon },
     computed: {
+        hasSlot() {
+            return !!(this.$slots.default || undefined)
+        },
         iconMapping () {
             return {
                 'single-user': SingleUserIcon,
@@ -58,7 +62,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .icon-button {
-    width: 100%;
+    width: inherit;
+    height: inherit;
     & > .box {
         border-radius: 8px;
         background: #ffffff;
@@ -72,13 +77,14 @@ export default Vue.extend({
         .icon {
             width: 18px;
             &.--is-big {
-                width: inherit;
-                height: 64px;
+                max-height: 8vh;
+                width: 100%;
             }
         }
         &.--is-big {
             padding: 3vw 2vw;
             height: inherit;
+            width: inherit;
         }
         &.--is-selected {
             background: #f5f5f5;
@@ -100,5 +106,11 @@ export default Vue.extend({
         }
     }
 
+    .medal-icon {
+        position: absolute;
+        right: 50%;
+        height: 5vh;
+        transform: translate(-30%, 60%);
+    }
 }
 </style>

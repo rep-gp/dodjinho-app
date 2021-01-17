@@ -140,7 +140,7 @@ export default {
             width: $size;
             height: $size;
             border-radius: $size;
-            border: 1.3vw solid $grey-darker;
+            border: 1.3vw solid $grey-quartenary;
         }
 
         .spacer {
@@ -152,7 +152,7 @@ export default {
             align-items: center;
             font-size: 6vw;
             font-weight: bold;
-            color: $grey-darker;
+            color: $grey-quartenary;
 
             &-icon {
                 margin-left: 3vw;

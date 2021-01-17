@@ -36,7 +36,7 @@ export default {
 .event-container {
     display: flex;
     align-items: center;
-    height: 8vh;
+    height: 10vh;
     width: 80vw;
     border-radius: 6px 0px 0px 6px;
     background-color: $white;
@@ -57,7 +57,7 @@ export default {
     h1 {
         font-size: 2vh;
         font-weight: 600;
-        color: $black;
+        color: $grey-quartenary;
         margin-block-start: 0;
         margin-block-end: 0;
     }

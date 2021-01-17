@@ -60,8 +60,6 @@ export default Vue.extend({
             opacity: 80%;
             &.--is-disabled { opacity: 100%; }
         }
-
-        
     }
 
 
