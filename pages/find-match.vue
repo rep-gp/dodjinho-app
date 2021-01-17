@@ -1,6 +1,10 @@
 <template>
     <div class="find-match">
-        <div class="header" />
+        <div class="header">
+            <nuxt-link to="/home">
+                <arrow-left />
+            </nuxt-link>
+        </div>
         <div class="solo-matching">
             <div class="title">
                 Solo
@@ -56,9 +60,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import ArrowLeft from '@/static/icons/arrow-left.svg'
+
 export default Vue.extend({
-    
     layout: 'solid',
+    components: { ArrowLeft },
     computed: {
         subjectList () {
             return [
@@ -82,6 +88,11 @@ export default Vue.extend({
     box-sizing: border-box;
     & > .header {
         height: 7.5vh;
+
+        svg {
+            height: 4vh;
+            fill: $white;
+        }
     }
     .title {
         font-weight: bold;
