@@ -2,8 +2,8 @@ import { ActionTree, MutationTree } from 'vuex'
 import { userFriendsData } from '@/use/mocked-data'
 
 export const state = () => ({
-    userData: null as unknown as any,
-    avatar: null as unknown as any,
+    userData: {},
+    avatar: null,
     userFriends: [...userFriendsData]
 })
 
