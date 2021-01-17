@@ -1,23 +1,66 @@
 <template>
     <div class="home-container">
-        <flat-button />
+        <event title="Desafio de Historia" class="home-event"/>
+
+        <div class="home-content">
+            <div class="user-info">
+                <guild-icon />
+                <p>NomeUsuario741</p>
+
+                <div class="user-badges">
+
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
-import FlatButton from '~/components/common/FlatButton.vue'
+import GuildIcon from '../static/icons/user-guild.svg'
+
+
 export default Vue.extend({
-    components: { FlatButton }
+    layout: 'solid',
+    components: { GuildIcon }
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home-container {
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin: 3vw;
+}
+
+.home-event {
+    margin-top: 2vh;
+    align-self: flex-end;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    margin: 2vh;
+
+    .user-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 3vw;
+        width: 65vw;
+        justify-content: space-between;
+
+        svg {
+            height: 7vh;
+        }
+
+        p {
+            color: $white;
+            font-weight: bold;
+            font-size: 2.5vh;
+        }
+    }
 }
 
 </style>
