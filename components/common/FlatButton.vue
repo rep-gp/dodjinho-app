@@ -66,7 +66,6 @@ export default Vue.extend({
 
     .button-text {
         margin: 0 auto 0 auto;
-        font-family: Poppins, sans-serif;
         font-weight: 700;
         font-size: 7vw;
         color: $blue-main;
