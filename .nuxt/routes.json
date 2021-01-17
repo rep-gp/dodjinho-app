@@ -3,14 +3,18 @@
     "name": "signup",
     "path": "/signup",
     "component": "/home/brnom/eu/dodjinho-app/pages/signup.vue",
-    "chunkName": "pages/signup",
-    "_name": "_6e972ec4"
+    "chunkName": "pages/signup"
+  },
+  {
+    "name": "test",
+    "path": "/test",
+    "component": "/home/brnom/eu/dodjinho-app/pages/test.vue",
+    "chunkName": "pages/test"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/brnom/eu/dodjinho-app/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_153ace54"
+    "chunkName": "pages/index"
   }
 ]

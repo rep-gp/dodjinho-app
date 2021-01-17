@@ -1,15 +1,15 @@
 {
-  "AvatarColorPicker": {
-    "description": "Auto imported from /components/signup/AvatarColorPicker.vue"
+  "Sidebar": {
+    "description": "Auto imported from /components/Sidebar.vue"
   },
-  "LazyAvatarColorPicker": {
-    "description": "Auto imported from /components/signup/AvatarColorPicker.vue"
+  "LazySidebar": {
+    "description": "Auto imported from /components/Sidebar.vue"
   },
-  "SignupHeader": {
-    "description": "Auto imported from /components/signup/SignupHeader.vue"
+  "Userbar": {
+    "description": "Auto imported from /components/Userbar.vue"
   },
-  "LazySignupHeader": {
-    "description": "Auto imported from /components/signup/SignupHeader.vue"
+  "LazyUserbar": {
+    "description": "Auto imported from /components/Userbar.vue"
   },
   "Avatar": {
     "description": "Auto imported from /components/avatar/Avatar.vue"
@@ -22,5 +22,17 @@
   },
   "LazyInputField": {
     "description": "Auto imported from /components/common/InputField.vue"
+  },
+  "AvatarColorPicker": {
+    "description": "Auto imported from /components/signup/AvatarColorPicker.vue"
+  },
+  "LazyAvatarColorPicker": {
+    "description": "Auto imported from /components/signup/AvatarColorPicker.vue"
+  },
+  "SignupHeader": {
+    "description": "Auto imported from /components/signup/SignupHeader.vue"
+  },
+  "LazySignupHeader": {
+    "description": "Auto imported from /components/signup/SignupHeader.vue"
   }
 }
