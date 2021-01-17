@@ -17,8 +17,18 @@
                 <icon :is="item.icon" class="sidebar-item-icon" />
                 {{ item.text }}
             </div>
-
         </div>
+
+        <footer>
+            <div class="avatar" />
+
+            <div class="spacer" />
+
+            <div class="exit">
+                Sair
+                <exit-icon class="exit-icon" />
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -33,6 +43,7 @@ import BellIcon from '@/static/icons/bell.svg'
 import CartIcon from '@/static/icons/cart.svg'
 import TrophyIcon from '@/static/icons/trophy.svg'
 import CoinsIcon from '@/static/icons/coins-dark.svg'
+import ExitIcon from '@/static/icons/exit.svg'
 
 export default {
     components: {
@@ -42,7 +53,8 @@ export default {
         BellIcon,
         CartIcon,
         TrophyIcon,
-        CoinsIcon
+        CoinsIcon,
+        ExitIcon
     },
     data () {
         return {
@@ -81,7 +93,7 @@ export default {
     background: $white;
     width: 0;
     height: 100vh;
-    padding: 10px;
+    padding: 6vw;
     position: fixed;
     z-index: 999;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.349);
@@ -114,7 +126,39 @@ export default {
 
         &-spacer {
             margin: 0 2vw;
-            // border: 1px solid red;
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30vh;
+
+        & > .avatar {
+            $size: 12vw;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            border: 1.3vw solid $grey-darker;
+        }
+
+        .spacer {
+            margin: 0 4vw;
+        }
+
+        .exit {
+            display: flex;
+            align-items: center;
+            font-size: 6vw;
+            font-weight: bold;
+            color: $grey-darker;
+
+            &-icon {
+                margin-left: 3vw;
+                fill: $grey;
+                width: 1em;
+            }
         }
     }
 
