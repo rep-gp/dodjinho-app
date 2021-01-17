@@ -108,6 +108,15 @@ body {
 
 * {
     font-family: Poppins, sans-serif;
+
+    h1 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
 }
 </style>
 
