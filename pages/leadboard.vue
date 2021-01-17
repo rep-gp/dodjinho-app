@@ -135,6 +135,7 @@ export default {
                 font-size: 0.9em;
                 appearance: none;
                 outline: none;
+                border: none;
                 width: 100%;
             }
 

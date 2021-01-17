@@ -5,8 +5,8 @@
         <h2>{{ resultMessage }}</h2>
 
         <div class="avatar-container">
-            <div class="avatar-won"><crown /><avatar /></div>
-            <div class="avatar-lost"><avatar /></div>
+            <div class="avatar-won"><crown /><avatar v-bind="victory && avatar" /></div>
+            <div class="avatar-lost"><avatar v-bind="!victory && avatar" /></div>
         </div>
 
         <div class="final-score">
@@ -39,7 +39,8 @@ export default {
     layout: 'clean',
 
     computed: {
-        ...mapState('score', ['userScore', 'adversaryScore'])
+        ...mapState('score', ['userScore', 'adversaryScore']),
+        ...mapState('user', ['avatar'])
     },
 
     components: {
@@ -54,6 +55,7 @@ export default {
     data() {
         return {
             resultMessage: this.userScore >= this.adversaryScore ? 'Você ganhou!' : 'Você perdeu.',
+            victory: this.userScore >= this.adversaryScore,
             pointsGained: this.userScore >= this.adversaryScore ? '+ 100' : '+50',
             creditsGained: this.userScore >= this.adversaryScore ? '+ 100' : '+50',
         }
