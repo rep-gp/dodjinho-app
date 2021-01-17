@@ -4,7 +4,7 @@ export default {
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: 'E-duca',
+        title: 'e-duca',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -43,8 +43,10 @@ export default {
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
         'nuxt-svg-loader',
-        // https://www.npmjs.com/package/@nuxtjs/style-resources
         '@nuxtjs/style-resources',
+        ['nuxt-vuex-localstorage', {
+            localStorage: ['user']
+        }]
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
