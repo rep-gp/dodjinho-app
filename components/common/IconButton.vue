@@ -116,7 +116,7 @@ export default Vue.extend({
         position: absolute;
         right: 50%;
         height: 5vh;
-        transform: translate(-30%, 60%);
+        transform: translate(-4vw, 3.5vh);
     }
 }
 </style>
