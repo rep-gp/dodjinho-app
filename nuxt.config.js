@@ -41,6 +41,7 @@ export default {
         '@nuxtjs/axios',
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
+        'nuxt-svg-loader',
         // https://www.npmjs.com/package/@nuxtjs/style-resources
         '@nuxtjs/style-resources',
     ],

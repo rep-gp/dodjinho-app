@@ -1,19 +1,16 @@
 <template>
     <div class="home-container">
-        Home {{ valor }}
-        <flat-button title="Jogar"/>
+        <flat-button />
     </div>
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue"
+import FlatButton from '~/components/common/FlatButton.vue'
+export default Vue.extend({
     layout: 'solid',
-    data() {
-        return {
-            valor: 'aaaaa'
-        }
-    }
-}
+    components: { FlatButton }
+})
 </script>
 
 <style scoped>
@@ -21,6 +18,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin: 3vw;
 }
 
 </style>
