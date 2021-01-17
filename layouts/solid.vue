@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="application">
+        <div class="background" />
         <div class="lighter-streak" />
         <Nuxt />
     </div>
@@ -13,7 +14,23 @@ body {
     width: 100vw !important;
     height: 100vh !important;
     overflow: hidden !important;
-    background: #645BD0;
+    .application {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #645BD0;
+            z-index: -1;
+        }
+        overflow: hidden;
+    }
     .lighter-streak {
         top: -46vh;
         left: 0;
