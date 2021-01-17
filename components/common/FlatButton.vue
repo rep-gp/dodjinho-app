@@ -25,7 +25,8 @@ export default Vue.extend({
     },
     methods: {
         onClick() {
-            this.$emit('click')
+            if(!this.disabled)
+                this.$emit('click')
         }
     }
 

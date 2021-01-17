@@ -80,12 +80,12 @@ export default {
         margin-left: 10%;
         height: 1.6vh;
         width: 1.6vh;
-        fill: $grey-tertiary;
+        margin-bottom: 0.3vh;
     }
 
     p {
         display: flex;
-        font-size: 1.4vh;
+        font-size: 1.6vh;
         margin-left: 5%;
         white-space: nowrap;
         color: $grey-tertiary;
