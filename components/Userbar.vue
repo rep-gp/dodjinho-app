@@ -2,12 +2,17 @@
     <div :class="['userbar', { '--expanded': userbarExpanded }]">
         <arrow-icon class="userbar-arrow" @click="closeUserbar" />
 
-        <input-field
-            label="Procurar amigos"
-            :value="search"
-            bordered blue icon
-            @input="onInput"
-        />
+        <div class="search">
+            <input-field
+                label="Procurar amigos"
+                :value="search"
+                bordered blue icon
+                @input="onInput"
+            />
+
+            <div class="add"> + </div>
+        </div>
+
 
         <toggle class="toggle" :options="['Amigos', 'Grupo']" @toggle="onToggle" />
 
@@ -17,6 +22,7 @@
                 :key="index + friend.name"
                 v-bind="friend"
             />
+            <div v-if="!filteredFriends.length" class="no-friends"> Nenhum amigo encontrado :( </div>
         </div>
     </div>
 </template>
@@ -103,6 +109,19 @@ export default {
         transform: rotate(180deg);
     }
 
+    .search {
+        display: flex;
+        align-items: center;
+
+        .add {
+            border: 2px solid $blue-main;
+            border-radius: 6px;
+            padding: .5vw 2vw;
+            height: 100%;
+            margin-left: 2vw;
+        }
+    }
+
     .toggle {
         margin: 4vh 0 2vh;
     }
@@ -110,6 +129,10 @@ export default {
     .friends {
         opacity: 0;
         transition: $ease-out;
+    }
+    .no-friends {
+        padding: 6vw;
+        text-align: center;
     }
 }
 </style>

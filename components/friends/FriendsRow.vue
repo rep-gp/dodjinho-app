@@ -53,6 +53,10 @@ export default {
         margin-right: 2vw;
     }
 
+    .info {
+        font-size: 4.4vw;
+    }
+
     .actions {
         position: absolute;
         right: 0;

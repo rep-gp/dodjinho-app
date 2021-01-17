@@ -40,7 +40,7 @@ export default Vue.extend({
             return [
                 'input-field', 
                 { '--is-bold': this.bold },
-                { '--is-big': this.big || true },
+                { '--is-big': this.big },
                 { '--is-blue': this.blue },
                 { '--is-centered': this.centered },
                 { '--is-bordered': this.bordered },
