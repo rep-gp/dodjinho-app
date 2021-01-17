@@ -89,7 +89,7 @@ body {
             left: 0;
             right: 0;
             background: #00000044;
-            z-index: 0;
+            z-index: 998;
         }
 
         overflow: hidden;
@@ -108,6 +108,15 @@ body {
 
 * {
     font-family: Poppins, sans-serif;
+
+    h1 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
 }
 </style>
 

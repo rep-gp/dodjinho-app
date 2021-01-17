@@ -13,18 +13,18 @@
         </div>
 
         <div class="sidebar-list">
-            <div v-for="(item, index) in items" :key="index" class="sidebar-item">
+            <div v-for="(item, index) in items" :key="index" class="sidebar-item" @click="goTo(item.routeName)">
                 <icon :is="item.icon" class="sidebar-item-icon" />
                 {{ item.text }}
             </div>
         </div>
 
         <footer>
-            <div class="avatar" />
+            <avatar-face bordered />
 
-            <div class="spacer" />
+            <!-- <div class="spacer" /> -->
 
-            <div class="exit">
+            <div class="exit" @click="exit">
                 Sair
                 <exit-icon class="exit-icon" />
             </div>
@@ -37,6 +37,7 @@ import { mapState } from 'vuex'
 
 import PointsLabel from '@/components/label/PointsLabel'
 import CreditLabel from '@/components/label/CreditLabel'
+import AvatarFace from '@/components/avatar/AvatarFace'
 
 import ArrowIcon from '@/static/icons/arrow-left.svg'
 import BellIcon from '@/static/icons/bell.svg'
@@ -47,6 +48,7 @@ import ExitIcon from '@/static/icons/exit.svg'
 
 export default {
     components: {
+        AvatarFace,
         PointsLabel,
         CreditLabel,
         ArrowIcon,
@@ -62,7 +64,7 @@ export default {
                 {
                     icon: BellIcon,
                     text: 'Notificações',
-                    routeName: 'notifications'
+                    routeName: ''
                 },
                 {
                     icon: CartIcon,
@@ -72,7 +74,7 @@ export default {
                 {
                     icon: TrophyIcon,
                     text: 'Rankings',
-                    routeName: 'ranking'
+                    routeName: 'leadboard'
                 }
             ]
         }
@@ -83,6 +85,13 @@ export default {
     methods: {
         closeSidebar () {
             this.$store.dispatch('ui/setSidebarExpand', false)
+        },
+        goTo (name) {
+            if (!name) { return }
+            this.$router.push({ name })
+        },
+        exit () {
+            this.$router.push('/')
         }
     }
 }
@@ -130,22 +139,13 @@ export default {
     }
 
     footer {
+        position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 30vh;
-
-        & > .avatar {
-            $size: 12vw;
-            width: $size;
-            height: $size;
-            border-radius: $size;
-            border: 1vw solid $grey-quartenary;
-        }
-
-        .spacer {
-            margin: 0 4vw;
-        }
+        bottom: 10vh;
+        left: 30px;
+        right: 30px;
 
         .exit {
             display: flex;

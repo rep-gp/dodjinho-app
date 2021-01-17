@@ -1,10 +1,10 @@
 <template>
-    <div :class="['credit-label', { '--dark': isDark }]">
+    <div :class="classes">
         <icon :is="icon" class="credit-label-icon" />
 
         <div class="credit-label-text">
             <div class="number"> {{ value }} </div>
-            Pontos
+            Créditos
         </div>
     </div>
 </template>
@@ -16,11 +16,18 @@ import CreditDarkIcon from '@/static/icons/coins-dark.svg'
 export default {
     props: {
         value: { type: Number, default: 0 },
-        isDark: { type: Boolean, default: false }
+        isDark: { type: Boolean, default: false },
+        big: { type: Boolean, default: false }
     },
     computed: {
         icon () {
             return this.isDark ? CreditDarkIcon : CreditIcon
+        },
+        classes () {
+            return ['credit-label', {
+                '--dark': this.isDark,
+                '--is-big': this.big
+            }]
         }
     }
 }
@@ -34,14 +41,29 @@ export default {
 
     &.--dark {
         .credit-label-text {
-            color: $grey;
+            color: $grey-secundary;
 
             .number { color: black; }
         }
     }
 
+    &.--is-big {
+        font-size: 10vw;
+        width: 100%;
+        justify-content: center;
+
+        .number {
+            margin-bottom: -2vh;
+        }
+
+        .credit-label-icon {
+            width: 28vw;
+            margin-right: -5vw;
+        }
+    }
+
     &-icon {
-        width: 2em;
+        width: 12vw;
         margin-right: -1vw;
         fill: $white;
     }
@@ -49,7 +71,7 @@ export default {
     &-text {
         .number {
             font-weight: bold;
-            margin-bottom: -1.3vh;
+            margin-bottom: -1vh;
         }
     }
 }

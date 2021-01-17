@@ -3,7 +3,7 @@ import { userFriendsData } from '@/use/mocked-data'
 
 export const state = () => ({
     userData: null as unknown as any,
-    avatar: null,
+    avatar: null as unknown as any,
     userFriends: userFriendsData
 })
 
