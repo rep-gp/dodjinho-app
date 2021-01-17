@@ -10,6 +10,9 @@
 
 body {
     margin: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
     background: #645BD0;
     .lighter-streak {
         top: -46vh;
