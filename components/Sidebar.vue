@@ -13,7 +13,7 @@
         </div>
 
         <div class="sidebar-list">
-            <div v-for="(item, index) in items" :key="index" class="sidebar-item">
+            <div v-for="(item, index) in items" :key="index" class="sidebar-item" @click="goTo(item.routeName)">
                 <icon :is="item.icon" class="sidebar-item-icon" />
                 {{ item.text }}
             </div>
@@ -64,7 +64,7 @@ export default {
                 {
                     icon: BellIcon,
                     text: 'Notificações',
-                    routeName: 'notifications'
+                    routeName: ''
                 },
                 {
                     icon: CartIcon,
@@ -74,7 +74,7 @@ export default {
                 {
                     icon: TrophyIcon,
                     text: 'Rankings',
-                    routeName: 'ranking'
+                    routeName: 'leadboard'
                 }
             ]
         }
@@ -85,6 +85,10 @@ export default {
     methods: {
         closeSidebar () {
             this.$store.dispatch('ui/setSidebarExpand', false)
+        },
+        goTo (name) {
+            if (!name) { return }
+            this.$router.push({ name })
         },
         exit () {
             this.$router.push('/')

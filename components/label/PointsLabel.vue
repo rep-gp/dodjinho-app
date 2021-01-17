@@ -35,14 +35,14 @@ export default {
 
     &.--dark {
         .points-label-text {
-            color: $grey;
+            color: $grey-secundary;
 
             .number { color: black; }
         }
     }
 
     &-icon {
-        width: 2em;
+        width: 8vw;
         margin-right: 2vw;
         fill: $white;
     }
@@ -50,7 +50,7 @@ export default {
     &-text {
         .number {
             font-weight: bold;
-            margin-bottom: -1.3vh;
+            margin-bottom: -1vh;
         }
     }
 }
