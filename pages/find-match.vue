@@ -86,10 +86,10 @@ export default Vue.extend({
             return [
                 { icon: 'technology', label: 'Tecnologia' },
                 { icon: 'geography', label: 'Geografia' },
-                { icon: 'history', label: 'História' },
+                { icon: 'history', label: 'Ed. Financeira' },
                 { icon: 'science', label: 'Ciência' },
-                { icon: 'lightbulb', label: 'Cultura' },
-                { icon: 'chemistry', label: 'Química' }
+                { icon: 'lightbulb', label: 'Empreendedorismo' },
+                { icon: 'chemistry', label: 'Projeto de Vida' }
             ]
         }
     },
