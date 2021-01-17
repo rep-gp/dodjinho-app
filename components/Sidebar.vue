@@ -22,7 +22,7 @@
         <footer>
             <avatar-face bordered />
 
-            <div class="spacer" />
+            <!-- <div class="spacer" /> -->
 
             <div class="exit" @click="exit">
                 Sair
@@ -139,14 +139,13 @@ export default {
     }
 
     footer {
+        position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 30vh;
-
-        .spacer {
-            margin: 0 4vw;
-        }
+        bottom: 10vh;
+        left: 30px;
+        right: 30px;
 
         .exit {
             display: flex;

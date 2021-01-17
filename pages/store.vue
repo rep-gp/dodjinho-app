@@ -90,7 +90,7 @@ export default {
     h2 {
         color: $white;
         font-weight: normal;
-        margin-top: 4vh;
+        margin-top: 3vh;
         margin-bottom: 1vh;
     }
 
