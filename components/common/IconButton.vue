@@ -1,5 +1,5 @@
 <template>
-    <div class="icon-button">
+    <div class="icon-button" @click="clicked">
         <div :class="['box', { '--is-selected': selected, '--is-big': bigIcon }]">
             <component :class="['icon', { '--is-big': bigIcon }]" :is="iconMapping[icon]"/>
             <div v-if='!bigIcon && hasSlot' class="text">
@@ -55,6 +55,11 @@ export default Vue.extend({
                 'science': ScienceIcon,
                 'technology': TechnologyIcon,
             }
+        }
+    },
+    methods: {
+        clicked() {
+            this.$emit('click')
         }
     }
 })

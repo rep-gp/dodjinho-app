@@ -10,14 +10,8 @@
                 Solo
             </div>
             <div class="options">
-                <icon-button icon="single-user">
-                    1x1
-                </icon-button>
-                <icon-button icon="multiple-users">
-                    3x3
-                </icon-button>
-                <icon-button icon="pen">
-                    Treino
+                <icon-button v-for="item in optionsList.solo" :key="item.label" :icon="item.icon" @click="selectMode(item)" :selected="item.label === selectedMode.mode && !selectedMode.group">
+                    {{ item.label }}
                 </icon-button>
             </div>
         </div>
@@ -26,14 +20,8 @@
                 Grupo
             </div>
             <div class="options">
-                <icon-button icon="single-user">
-                    1x1
-                </icon-button>
-                <icon-button icon="multiple-users">
-                    3x3
-                </icon-button>
-                <icon-button icon="shield">
-                    Grupo
+                <icon-button v-for="item in optionsList.group" :key="item.label" :icon="item.icon" @click="selectMode(item, true)" :selected="item.label === selectedMode.mode && selectedMode.group">
+                    {{ item.label }}
                 </icon-button>
             </div>
         </div>
@@ -48,6 +36,8 @@
                     :key="subject.label"
                     :icon="subject.icon"
                     big-icon
+                    @click="selectSubject(subject.label)"
+                    :selected="selectedSubjects.includes(subject.label)"
                 >
                     {{ subject.label }}
                 </icon-button>
@@ -56,7 +46,7 @@
 
         <flat-button title="Procurar Partida" @click="toggleSearch"/>
 
-        <search-party :visible="search" @cancel-search="toggleSearch"/>
+        <search-party :visible="search" @cancel-search="toggleSearch" :mode="selectedMode" :subjects="selectedSubjects"/>
     </div>
 </template>
 
@@ -69,10 +59,29 @@ export default Vue.extend({
     components: { ArrowLeft },
     data() {
         return {
+            selectedMode: {
+                group: false,
+                mode: ''
+            },
+            selectedSubjects: [],
             search: false
         }
     },
     computed: {
+        optionsList() {
+            return {
+                solo: [
+                    { icon: 'single-user' , label: '1x1'},
+                    { icon: 'multiple-users' , label: '3x3'},
+                    { icon: 'pen' , label: 'Treino'}
+                ],
+                group: [
+                    { icon: 'single-user' , label: '1x1'},
+                    { icon: 'multiple-users' , label: '3x3'},
+                    { icon: 'shield' , label: 'Grupo'}
+                ]
+            }
+        },
         subjectList () {
             return [
                 { icon: 'technology', label: 'Tecnologia' },
@@ -87,6 +96,21 @@ export default Vue.extend({
     methods: {
         toggleSearch() {
             this.search = !this.search
+        },
+        selectMode(item: any, group?: boolean) {
+            if(group) this.selectedMode.group = true
+            else this.selectedMode.group = false
+
+            this.selectedMode.mode = item.label
+        },
+        selectSubject(item: any) {
+            var arr: string[] = this.selectedSubjects
+
+            if(arr.includes(item)){
+                arr = arr.filter(a => a !== item as string)
+            } else {
+                arr.push(item)
+            }
         }
     }
 

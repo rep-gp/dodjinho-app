@@ -1,5 +1,5 @@
 <template>
-    <transition name="bounce">
+    <slide>
         <div v-if="visible" class="search-party-container">
             <div class="blur" />
 
@@ -11,25 +11,32 @@
                 <div class="filters">
                     <div class="filter-group">
                         <div class="title">Modo:</div>
-                        <div class="value"> Solo (1x1)</div>
+                        <div class="value">{{ mode.group ? 'Grupo' : 'Solo' }} ({{ mode.mode }})</div>
                     </div>
                     <div class="filter-group">
                         <div class="title">Assuntos:</div>
-                        <div class="value">História, Geografia, Ciência</div>
+                        <div class="value">{{ subjects.join(', ') }}</div>
                     </div>
                 </div>
 
                 <flat-button class="cancel-button" title="Cancelar" dark @click="cancelSearch"/>
             </div>
         </div>
-    </transition>
+    </slide>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-    props: { visible: { type: Boolean, default: false }},
+    props: {
+        visible: { type: Boolean, default: false },
+        mode: {},
+        subjects: []
+    },
+    mounted() {
+        console.log(this.subjects)
+    },
     methods: {
         cancelSearch() {
             this.$emit('cancel-search')
@@ -51,7 +58,7 @@ export default Vue.extend({
     .blur {
         position: absolute;
         width: 100%;
-        height: 50vh;
+        height: 45vh;
         background-color: $grey-tertiary;
         opacity: 0.4;
     }
@@ -63,7 +70,7 @@ export default Vue.extend({
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 50vh;
+        height: 55vh;
         background-color: $white;
         border-radius: 15px 15px 0 0;
 
@@ -105,24 +112,5 @@ export default Vue.extend({
             background-color: $red;
         }
     }
-
-    .bounce-enter-active {
-  animation: bounce-in .5s;
-}
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 }
 </style>
