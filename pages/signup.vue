@@ -26,12 +26,14 @@ import SignupHeader from "~/components/signup/SignupHeader.vue"
 export default Vue.extend({
     components: { SignupHeader, FlatButton },
     data: () => ({
-        avatar: {}
+        avatar: {},
+        name: ''
     }),
     methods: {
+        ...mapActions('ui', ['alertInput']),
         ...mapActions('user', ['setUserAvatar', 'setUserData']),
         onNameChanged (name: string) {
-            this.setUserData({name})
+            this.name = name
         },
         onSkinColorChanged (skinColor: string) {
             this.avatar = { ...this.avatar, skin: skinColor }
@@ -43,6 +45,12 @@ export default Vue.extend({
             this.avatar = { ...this.avatar, ...color }
         },
         onContinueClicked () {
+            if (!this.name) {
+                this.alertInput()
+                console.log('missing name')
+                return
+            }
+            this.setUserData({ name: this.name })
             this.setUserAvatar(this.avatar)
             this.$router.push('/home')
         }

@@ -57,7 +57,7 @@ export default Vue.extend({
         &.--is-disabled p {
             color: $grey-secundary;
         }
-        &:hover {
+        &:active {
             opacity: 80%;
             &.--is-disabled { opacity: 100%; }
         }
