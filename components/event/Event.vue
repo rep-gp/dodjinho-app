@@ -57,7 +57,7 @@ export default {
     h1 {
         font-size: 2vh;
         font-weight: 600;
-        color: $black;
+        color: $grey-quartenary;
         margin-block-start: 0;
         margin-block-end: 0;
     }

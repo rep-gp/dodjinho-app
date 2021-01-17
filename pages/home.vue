@@ -6,9 +6,11 @@
             <div class="user-info">
                 <guild-icon />
                 <p>NomeUsuario741</p>
+            </div>
 
-                <div class="user-badges">
-
+            <div class="user-badges">
+                <div class="badge">
+                    <icon-button class="badge-card" is-big icon="geography"/>
                 </div>
             </div>
         </div>
@@ -59,6 +61,26 @@ export default Vue.extend({
             color: $white;
             font-weight: bold;
             font-size: 2.5vh;
+        }
+    }
+}
+
+.user-badges {
+    position: relative;
+    width: 20vw;
+    align-self: flex-end;
+    top: -6vh;
+    .badge {
+        height: 3vh!important;
+        width: 15vw;
+
+        .badge-card {
+            &:first-child{
+                height: 8vh!important;
+            }
+        }
+        svg {
+
         }
     }
 }
