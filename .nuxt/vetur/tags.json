@@ -5,6 +5,12 @@
   "LazyAvatar": {
     "description": "Auto imported from /components/avatar/Avatar.vue"
   },
+  "IconButton": {
+    "description": "Auto imported from /components/common/IconButton.vue"
+  },
+  "LazyIconButton": {
+    "description": "Auto imported from /components/common/IconButton.vue"
+  },
   "InputField": {
     "description": "Auto imported from /components/common/InputField.vue"
   },

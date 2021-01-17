@@ -1,5 +1,12 @@
 [
   {
+    "name": "find-match",
+    "path": "/find-match",
+    "component": "/home/henry/dodjinho-app/pages/find-match.vue",
+    "chunkName": "pages/find-match",
+    "_name": "_96149c78"
+  },
+  {
     "name": "signup",
     "path": "/signup",
     "component": "/home/henry/dodjinho-app/pages/signup.vue",

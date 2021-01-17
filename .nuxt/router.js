@@ -4,6 +4,7 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _96149c78 = () => interopDefault(import('../pages/find-match.vue' /* webpackChunkName: "pages/find-match" */))
 const _fe934faa = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
 const _6995268f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -24,6 +25,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/find-match",
+    component: _96149c78,
+    name: "find-match"
+  }, {
     path: "/signup",
     component: _fe934faa,
     name: "signup"
