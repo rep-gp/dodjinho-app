@@ -5,9 +5,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
     props: {
         title: {type: String, default: 'Placeholder'},
         iconName: {type: String, default: ''},
@@ -29,7 +27,7 @@ export default Vue.extend({
         }
     }
 
-})
+}
 </script>
 
 <style lang="scss" scoped>

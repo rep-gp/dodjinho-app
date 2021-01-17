@@ -4,27 +4,49 @@
 
         <div class="home-content">
             <div class="user-info">
-                <guild-icon />
+                <div class="user-guild">
+                    <guild-svg />
+                    <p>Clã GP</p>
+                </div>
                 <p>NomeUsuario741</p>
             </div>
 
             <div class="user-badges">
-                <div class="badge">
-                    <icon-button class="badge-card" is-big icon="geography"/>
+                <div v-for="subject in badgesList" :key="subject" class="badge">
+                    <icon-button class="badge-card" :icon="subject" bigIcon medal />
                 </div>
             </div>
+
+            <highligth-svg class="highlight"/>
+            <div class="user-avatar">
+                <avatar />
+                <podium-svg class="avatar-podium" />
+            </div>
+
+            <play-button class="play-button" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
-import GuildIcon from '../static/icons/user-guild.svg'
+import GuildSvg from '@/static/illustrations/user-guild.svg'
+import PodiumSvg from '@/static/illustrations/podium.svg'
+import HighligthSvg from '@/static/illustrations/highlight.svg'
 
 
 export default Vue.extend({
     layout: 'solid',
-    components: { GuildIcon }
+    data() {
+        return {
+            badgesList: ['geography', 'science', 'computation', 'history']
+        }
+    },
+    components: {
+        GuildSvg,
+        PodiumSvg,
+        HighligthSvg
+    }
 })
 </script>
 
@@ -33,54 +55,94 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     flex: 1;
-}
 
-.home-event {
-    margin-top: 2vh;
-    align-self: flex-end;
-}
-
-.home-content {
-    display: flex;
-    flex-direction: column;
-    margin: 2vh;
-
-    .user-info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 3vw;
-        width: 65vw;
-        justify-content: space-between;
-
-        svg {
-            height: 7vh;
-        }
-
-        p {
-            color: $white;
-            font-weight: bold;
-            font-size: 2.5vh;
-        }
+    .home-event {
+        margin-top: 2vh;
+        align-self: flex-end;
     }
-}
 
-.user-badges {
-    position: relative;
-    width: 20vw;
-    align-self: flex-end;
-    top: -6vh;
-    .badge {
-        height: 3vh!important;
-        width: 15vw;
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        margin: 2vh;
 
-        .badge-card {
-            &:first-child{
-                height: 8vh!important;
+        .user-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 3vw;
+            width: 65vw;
+            justify-content: space-between;
+
+            p {
+                color: $white;
+                font-weight: bold;
+                font-size: 2.5vh;
+            }
+
+            .user-guild {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 2vh;
+
+                svg {
+                    height: 7vh;
+                }
+
+                p {
+                    margin-top: -0.4vh;
+                    color: $white;
+                    font-size: 1.5vh;
+                }
             }
         }
-        svg {
 
+        .user-badges {
+            position: relative;
+            width: 14vw;
+            align-self: flex-end;
+            top: -6vh;
+            margin-left: 5vw;
+
+            .badge {
+                width: 6vh;
+                margin-bottom: 2vh;
+            }
+        }
+
+        .user-avatar {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            position: relative;
+            top: -25vh;
+            svg {
+                height: 40vh;
+                z-index: 10;
+            }
+
+            .avatar-podium {
+                position: relative;
+                height: 150px;
+                top: -4.5vh;
+                z-index: 9;
+            }
+        }
+
+        .play-button {
+            position: relative;
+            width: 95%;
+            margin: 0 auto 0 auto;
+            top: -25vh;
+            width: 95%;
+        }
+
+        .highlight {
+            display: flex;
+            align-self: center;
+            position: absolute
         }
     }
 }
