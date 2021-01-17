@@ -40,7 +40,19 @@ export default {
 
     computed: {
         ...mapState('score', ['userScore', 'adversaryScore']),
-        ...mapState('user', ['avatar'])
+        ...mapState('user', ['avatar']),
+        resultMessage() {
+            return this.userScore >= this.adversaryScore ? 'Você ganhou!' : 'Você perdeu.'
+        },
+        victory() {
+            return this.userScore >= this.adversaryScore
+        },
+        pointsGained() {
+            return this.userScore >= this.adversaryScore ? '+ 100' : '+50'
+        },
+        creditsGained() {
+            return this.userScore >= this.adversaryScore ? '+ 100' : '+50'
+        }
     },
 
     components: {
@@ -50,15 +62,6 @@ export default {
         Points,
         Credits,
         FlatButton
-    },
-
-    data() {
-        return {
-            resultMessage: this.userScore >= this.adversaryScore ? 'Você ganhou!' : 'Você perdeu.',
-            victory: this.userScore >= this.adversaryScore,
-            pointsGained: this.userScore >= this.adversaryScore ? '+ 100' : '+50',
-            creditsGained: this.userScore >= this.adversaryScore ? '+ 100' : '+50',
-        }
     },
 
     methods: {
