@@ -18,6 +18,7 @@
 import Vue from "vue"
 import SignupHeader from "~/components/signup/SignupHeader.vue"
 export default Vue.extend({
+    layout: 'solid',
     components: { SignupHeader },
     data: () => ({
         avatar: {}

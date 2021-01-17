@@ -8,7 +8,6 @@
 import Vue from "vue"
 import FlatButton from '~/components/common/FlatButton.vue'
 export default Vue.extend({
-    layout: 'solid',
     components: { FlatButton }
 })
 </script>
