@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import SearchIcon from '@/static/icons/search.svg'
 
 export default Vue.extend({
@@ -36,6 +37,7 @@ export default Vue.extend({
         }
     },
     computed: {
+        ...mapState('ui', ['inputAlert']),
         classMapping () {
             return [
                 'input-field', 
@@ -44,6 +46,7 @@ export default Vue.extend({
                 { '--is-blue': this.blue },
                 { '--is-centered': this.centered },
                 { '--is-bordered': this.bordered },
+                { '--alerting': this.inputAlert },
             ]
         }
     },
@@ -67,6 +70,8 @@ export default Vue.extend({
     padding: 1vw;
     display: flex;
     align-items: center;
+    position: relative;
+    border: 2px solid white;
 
     input {
         width: 100%;
@@ -78,6 +83,16 @@ export default Vue.extend({
         width: 10%;
         margin: 0 1vw;
         fill: #999;
+    }
+
+    &.--alerting {
+        border: 2px solid $red;
+        animation: inputZoom 0.4s linear infinite;
+
+        // input::placeholder{
+        //     color: $red;
+        //     opacity: .8;
+        // }
     }
 
     &.--is-bold > input { font-weight: bold; }
