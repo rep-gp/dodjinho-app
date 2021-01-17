@@ -64,6 +64,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100vh;
 
     .home-event {
         margin-top: 2vh;
@@ -133,7 +134,7 @@ export default Vue.extend({
             position: relative;
             top: -42vh;
             svg {
-                height: 40vh;
+                height: 35vh;
                 z-index: 10;
             }
 
@@ -148,7 +149,7 @@ export default Vue.extend({
         .play-button {
             position: relative;
             width: 95%;
-            margin: 0 auto 0 auto;
+            margin: 10% auto 0 auto;
             top: -45vh;
             width: 95%;
             z-index: 9;

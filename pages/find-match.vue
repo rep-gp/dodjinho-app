@@ -104,13 +104,15 @@ export default Vue.extend({
             this.selectedMode.mode = item.label
         },
         selectSubject(item: any) {
-            var arr: string[] = this.selectedSubjects
+            let arr: string[] = this.selectedSubjects
 
             if(arr.includes(item)){
-                arr = arr.filter(a => a !== item as string)
+                arr = arr.filter(a => a !== item)
             } else {
                 arr.push(item)
             }
+
+            this.selectedSubjects = arr as never[]
         }
     }
 

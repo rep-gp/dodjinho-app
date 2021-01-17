@@ -93,7 +93,7 @@ export default Vue.extend({
             width: inherit;
         }
         &.--is-selected {
-            background: #f5f5f5;
+            background: #bfc3ee;
             border: 2px solid $icon-secundary;
         }
     }
