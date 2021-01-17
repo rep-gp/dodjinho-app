@@ -63,6 +63,8 @@ body {
     width: 100vw !important;
     height: 100vh !important;
     overflow: hidden !important;
+    outline: none;
+    -moz-user-select: none;
     a { text-decoration: none; }
     .application {
         position: absolute;

@@ -150,7 +150,7 @@ export default Vue.extend({
             position: relative;
             width: 90%;
             margin: 10% auto 0 auto;
-            top: -45vh;
+            top: -47vh;
             z-index: 9;
         }
 
