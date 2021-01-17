@@ -1,18 +1,20 @@
 <template>
-    <div class="event-container">
-        <fire-icon class="event-icon"/>
+    <slide toLeft>
+        <div class="event-container">
+            <fire-icon class="event-icon"/>
 
-        <div class="event-content">
-            <h1>{{title}}</h1>
-            <p>Evento começa em:</p>
-            <div class="event-timer">
-                <div>
-                    <clock-icon class="event-timer-icon" />
+            <div class="event-content">
+                <h1>{{title}}</h1>
+                <p>Evento começa em:</p>
+                <div class="event-timer">
+                    <div>
+                        <clock-icon class="event-timer-icon" />
+                    </div>
+                    <p> 3 horas 2 minutos e 25 segundos</p>
                 </div>
-                <p> 3 horas 2 minutos e 25 segundos</p>
             </div>
         </div>
-    </div>
+    </slide>
 </template>
 
 <script lang="ts">

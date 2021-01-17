@@ -1,6 +1,6 @@
 <template>
     <div class="home-container">
-        <event title="Desafio de Historia" class="home-event"/>
+        <event v-show="event" title="Desafio de Historia" class="home-event"/>
 
         <div class="home-content">
             <div class="user-info">
@@ -42,8 +42,14 @@ export default Vue.extend({
     layout: 'solid',
     data() {
         return {
+            event: false,
             badgesList: ['geography', 'science', 'technology', 'history']
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.event = true
+        }, 1500);
     },
     components: {
         GuildSvg,
@@ -60,10 +66,14 @@ export default Vue.extend({
     flex: 1;
 
     .home-event {
+        margin-top: 2vh;
         align-self: flex-end;
     }
 
     .home-content {
+        position: absolute;
+        width: 90%;
+        top: 20vh;
         display: flex;
         flex-direction: column;
         margin: 1vh 2vh 2vh 2vh;
