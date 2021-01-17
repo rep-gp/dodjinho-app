@@ -1,14 +1,10 @@
 <template>
-    <div>
-        <transition name="fade">
-            <div v-if="userbarExpanded" class="userbar">
-                <header>
-                    <div class="userbar-close" @click="closeUserbar">
-                        x
-                    </div>
-                </header>
+    <div :class="['userbar', { '--expanded': userbarExpanded }]">
+        <header>
+            <div class="userbar-close" @click="closeUserbar">
+                >
             </div>
-        </transition>
+        </header>
     </div>
 </template>
 
@@ -28,24 +24,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active, .fade-leave-active {
-    transition: .2s;
-    opacity: 0;
-    transform: translateX(100px);
-}
-.fade-enter, .fade-leave-to {
-    transition: .2s;
-    transform: translateX(100px);
-}
 .userbar {
-    margin-left: auto;
+    right: 0;
+    width: 0;
     background: $white;
     height: 100vh;
-    padding: 10px;
+    padding: 6vw;
     position: fixed;
     z-index: 999;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.349);
-    width: $userbar-width;
+    transition: $ease-out;
+    visibility: hidden;
+    opacity: 0;
+
+    &.--expanded {
+        opacity: 1;
+        visibility: visible;
+        transition: $ease-in;
+        width: $userbar-width;
+    }
 
     header {
         display: flex;

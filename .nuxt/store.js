@@ -17,14 +17,16 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('../store/ui.js'), 'ui.js')
+  resolveStoreModules(require('../store/ui.ts'), 'ui.ts')
+  resolveStoreModules(require('../store/user.ts'), 'user.ts')
 
   // If the environment supports hot reloading...
 
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '../store/ui.js',
+      '../store/ui.ts',
+      '../store/user.ts',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()

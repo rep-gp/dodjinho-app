@@ -49,7 +49,7 @@ export default {
             this.$store.dispatch('ui/setSidebarExpand', true)
         },
         openUserbar () {
-            // this.$store.dispatch('ui/setUserbarExpand', true)
+            this.$store.dispatch('ui/setUserbarExpand', true)
         }
     }
 }

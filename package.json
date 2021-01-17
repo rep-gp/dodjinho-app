@@ -16,9 +16,10 @@
         "@nuxtjs/pwa": "^3.0.2",
         "core-js": "^3.6.5",
         "node-sass": "^5.0.0",
+        "nuxt": "^2.14.6",
         "nuxt-svg-loader": "^1.2.0",
-        "sass-loader": "^10.1.1",
-        "nuxt": "^2.14.6"
+        "nuxt-vuex-localstorage": "^1.2.7",
+        "sass-loader": "^10.1.1"
     },
     "devDependencies": {
         "@nuxt/types": "^2.14.6",
