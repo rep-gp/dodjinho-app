@@ -64,6 +64,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100vh;
 
     .home-event {
         margin-top: 2vh;
@@ -104,9 +105,9 @@ export default Vue.extend({
                 }
 
                 p {
-                    margin-top: -0.4vh;
+                    margin-top: -0.1vh;
                     color: $white;
-                    font-size: 1.5vh;
+                    font-size: 1.7vh;
                 }
             }
         }
@@ -115,7 +116,7 @@ export default Vue.extend({
             position: relative;
             width: 16vw;
             align-self: flex-end;
-            top: -6vh;
+            top: -8vh;
             margin-left: 5vw;
 
             .badge {
@@ -133,32 +134,31 @@ export default Vue.extend({
             position: relative;
             top: -42vh;
             svg {
-                height: 40vh;
+                height: 35vh;
                 z-index: 10;
             }
 
             .avatar-podium {
                 position: relative;
-                height: 150px;
-                top: -4.5vh;
+                height: 100px;
+                top: -3.5vh;
                 z-index: 9;
             }
         }
 
         .play-button {
             position: relative;
-            width: 95%;
-            margin: 0 auto 0 auto;
-            top: -45vh;
-            width: 95%;
+            width: 90%;
+            margin: 10% auto 0 auto;
+            top: -47vh;
             z-index: 9;
         }
 
         .highlight {
             display: flex;
-            z-index: 8;
             align-self: center;
-            position: absolute
+            position: absolute;
+            height: 80vh;
         }
     }
 }

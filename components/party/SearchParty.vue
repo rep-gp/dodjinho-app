@@ -34,9 +34,6 @@ export default Vue.extend({
         mode: {},
         subjects: []
     },
-    mounted() {
-        console.log(this.subjects)
-    },
     methods: {
         cancelSearch() {
             this.$emit('cancel-search')

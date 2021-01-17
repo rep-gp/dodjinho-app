@@ -41,7 +41,7 @@ export default {
     .button-text {
         margin: 0 auto 0 auto;
         font-weight: 700;
-        font-size: 7vw;
+        font-size: 5vw;
         color: $blue-main;
     }
 

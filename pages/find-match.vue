@@ -104,13 +104,15 @@ export default Vue.extend({
             this.selectedMode.mode = item.label
         },
         selectSubject(item: any) {
-            var arr: string[] = this.selectedSubjects
+            let arr: string[] = this.selectedSubjects
 
             if(arr.includes(item)){
-                arr = arr.filter(a => a !== item as string)
+                arr = arr.filter(a => a !== item)
             } else {
                 arr.push(item)
             }
+
+            this.selectedSubjects = arr as never[]
         }
     }
 
@@ -120,10 +122,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .find-match {
     width: 100%;
-    padding: 20px;
+    padding: 1vh 5vw;
     box-sizing: border-box;
     & > .header {
-        height: 7.5vh;
+        height: 5vh;
 
         svg {
             height: 4vh;
@@ -133,22 +135,22 @@ export default Vue.extend({
     .title {
         font-weight: bold;
         color: #ffffff;
-        font-size: 14pt;
-        margin-top: 15px;
+        font-size: 2.5vh;
+        margin-top: 2vh;
     }
     & > .solo-matching, & > .group-matching {
         .options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 2vw;
         }
     }
     & > .subjects {
-        margin: 40px 0;
+        margin: 5vh 0;
         & > .options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 2vw;
         }
     }
 }
