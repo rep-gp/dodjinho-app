@@ -1,9 +1,12 @@
 <template>
     <div class="store">
         <arrow-icon @click="goBack()" class="arrow" />
-        <h1> Loja </h1>
 
-        <credit-label :value="1000" big />
+        <div class="header">
+            <h1> Loja </h1>
+            <credit-label class="credit" :value="1000" big/>
+        </div>
+
 
         <h2> Categorias </h2>
 
@@ -20,6 +23,18 @@
                     {{ item.name }}
                 </div>
             </div>
+        </div>
+
+        <div class="items-list">
+            <shopping-item
+                class="shopping-item"
+                v-for="item in itemList"
+                :key="item.name"
+                :icon="item.icon"
+                :name="item.name"
+                :description="item.description"
+                :price="item.price"
+            />
         </div>
 
     </div>
@@ -41,7 +56,13 @@ export default {
     },
     data () {
         return {
-            active: 0
+            active: 0,
+            itemList: [
+                {icon: 'course', name: 'Curso de Design', description: '300 horas', price: 700},
+                {icon: 'book', name: 'Vale Livro (Americanas)', description: '1 livro de até R$100', price: 400},
+                {icon: 'course', name: 'Curso de inteligência emocional', description: '300 horas', price: 600},
+                {icon: 'course', name: 'Curso SENAI', description: '400 horas', price: 1000}
+            ]
         }
     },
     computed: {
@@ -77,17 +98,19 @@ export default {
 .store {
     padding: 20px;
     .arrow {
-        width: 5vw;
+        width: 4vw;
         fill: $white;
     }
 
     h1 {
+        font-size: 4vh;
         text-align: center;
         color: $white;
         margin-top: 0;
     }
 
     h2 {
+        font-size: 3vh;
         color: $white;
         font-weight: normal;
         margin-top: 3vh;
@@ -98,7 +121,7 @@ export default {
         display: flex;
 
         .category {
-            margin-right: 4vw;
+            margin-right: 3vw;
 
             &.--active {
                 .card {
@@ -139,5 +162,13 @@ export default {
             }
         }
     }
+
+    .items-list{
+        overflow-y: auto;
+        .shopping-item {
+            margin: 1.2vh 0;
+        }
+    }
+
 }
 </style>
