@@ -3,7 +3,7 @@
         <div class="player-area">
             <div class="team">
                 <div class="player">
-                    <div class="avatar"><avatar /></div>
+                    <div class="avatar"><avatar v-bind="avatar" /></div>
         
                     <div class="player-info">
                         <span>{{ players[0].name }}</span>
@@ -64,7 +64,8 @@ import Timer from '@/static/icons/timer.svg'
 
 export default {
     computed: {
-        ...mapState('score', ['userScore, adversaryScore'])
+        ...mapState('score', ['userScore, adversaryScore']),
+        ...mapState('user', ['avatar'])
     },
 
     components: {
@@ -289,6 +290,7 @@ export default {
         background-color: #FFF9F9;
         font-size: 1em;
         text-align: center;
+        outline: none;
     }
 
     .option:disabled {
