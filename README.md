@@ -1,20 +1,57 @@
-# app
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/rep-gp/e-duca">
+    <img src="static/logo.png" alt="Logo" width="180" height="180">
+  </a>
 
-## Build Setup
+  <!-- <h1 align="center">e-duca</h1> -->
 
-```bash
-# install dependencies
-$ yarn install
+  <p align="center">
+    Projeto desenvolvido para o Hackathon CCR realizado pela Shawee. A ideia consiste em desenvolver um jogo em formato de quiz para auxiliar jovens alunos em seu processo de aprendizagem e adaptar trilhas de conteúdo específicas para seus problemas pessoais. É uma plataforma competitiva com recompensas reais que promove engajamento em atividades escolares coletivas.
+    <br />
+    <a href="https://e-duca.netlify.app/">Ver Demo</a>
+  </p>
+</p>
 
-# serve with hot reload at localhost:3000
-$ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+<details open="open">
+  <summary><h2 style="display: inline-block">Tabela de Conteúdo</h2></summary>
+  <ol>
+    <li>
+      <a href="#sobre-o-projeto">Sobre o Projeto</a>
+      <ul>
+        <li><a href="#utilizamos">Utilizamos</a></li>
+      </ul>
+    </li>
+    <li><a href="#uso">Uso</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ol>
+</details>
 
-# generate static project
-$ yarn generate
-```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Sobre o Projeto
+Abaixo temos a prototipação do projeto feita no Figma, plataforma para design colaborativo.
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fk9RSDB9lPvFOMTughhHvwN%2FHackathon-CCR%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+
+
+### Utilizamos
+
+* [Nuxt](https://github.com/nuxt)
+* [Nuxt PWA](https://github.com/nuxt-community/pwa-module)
+* [Nuxt LocalStorage](https://github.com/rubystarashe/nuxt-vuex-localstorage)
+* [Nuxt SVG Loader](https://github.com/nuxt-community/svg-module)
+* [Sass Loader](https://github.com/webpack-contrib/sass-loader)
+* [Typescript](https://github.com/microsoft/TypeScript)
+* [Vue](https://github.com/vuejs/vue)
+* [Vue Lottie](https://github.com/chenqingspring/vue-lottie)
+* [Vue Modal](https://github.com/euvl/vue-js-modal)
+
+## Contato
+
+- Bruno Mengaldo - [@brunomengaldo](https://twitter.com/brunomengaldo)
+- Guilherme Oliveira - [@Guiqft](https://twitter.com/Guiqft)
+- Henrique Cunha - [@henrycunh](https://twitter.com/henrycunh)
+- Jonathan Silva - [@jj_neno](https://twitter.com/jj_neno)
+- Rodrigo Godinho - [@rodlego_](https://twitter.com/rodlego_)
