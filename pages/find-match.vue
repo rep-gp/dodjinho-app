@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <flat-button title="Procurar Partida" @click="toggleSearch"/>
+        <flat-button title="Procurar Partida" @click="toggleSearch" :disabled="isDisabled"/>
 
         <search-party :visible="search" @cancel-search="toggleSearch" :mode="selectedMode" :subjects="selectedSubjects"/>
     </div>
@@ -82,20 +82,29 @@ export default Vue.extend({
                 ]
             }
         },
-        subjectList () {
+        subjectList() {
             return [
                 { icon: 'technology', label: 'Tecnologia' },
                 { icon: 'geography', label: 'Geografia' },
-                { icon: 'history', label: 'História' },
+                { icon: 'history', label: 'Ed. Financeira' },
                 { icon: 'science', label: 'Ciência' },
-                { icon: 'lightbulb', label: 'Cultura' },
-                { icon: 'chemistry', label: 'Química' }
+                { icon: 'lightbulb', label: 'Empreendedorismo' },
+                { icon: 'chemistry', label: 'Projeto de Vida' }
             ]
+        },
+        isDisabled(): boolean{
+            const mode = this.$data.selectedMode.mode
+            const subjects = this.$data.selectedSubjects
+
+            return !(mode !== '' && subjects.length !== 0)
         }
     },
     methods: {
         toggleSearch() {
             this.search = !this.search
+            setTimeout(() => {
+                this.$router.push('/quiz')
+            }, 2000);
         },
         selectMode(item: any, group?: boolean) {
             if(group) this.selectedMode.group = true

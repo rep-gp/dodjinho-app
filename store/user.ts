@@ -35,7 +35,8 @@ export const mutations: MutationTree<RootState> = {
 }
 
 export const actions: ActionTree<RootState, RootState> = {
-    seUserData({ commit }, data) {
+    setUserData({ commit }, data) {
+        console.log(data)
         commit('SET_USER_DATA', data)
     },
     setUserAvatar ({ commit }, data) {

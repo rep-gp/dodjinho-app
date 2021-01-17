@@ -84,14 +84,15 @@ export default {
         margin-right: 2vw;
 
         h1 {
-            font-size: 2vh;
+            font-size: 1.9vh;
             white-space: nowrap;
             color: $grey-quartenary;
         }
 
         p {
-            font-size: 1.8vh;
+            font-size: 1.7vh;
             color: $grey-secundary;
+            white-space: nowrap;
         }
     }
 

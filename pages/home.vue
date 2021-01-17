@@ -1,6 +1,6 @@
 <template>
     <div class="home-container">
-        <event v-show="event" title="Desafio de Historia" class="home-event"/>
+        <event v-show="event" title="Desafio Cidadania" class="home-event"/>
 
         <div class="home-content">
             <div class="user-info">
@@ -8,7 +8,7 @@
                     <guild-svg />
                     <p>Clã GP</p>
                 </div>
-                <p>NomeUsuario741</p>
+                <p>{{ userData.name }}</p>
             </div>
 
             <div class="user-badges">
@@ -19,7 +19,7 @@
 
             <highligth-svg class="highlight"/>
             <div class="user-avatar">
-                <avatar v-bind="avatar" />
+                <avatar v-bind="avatar"/>
                 <podium-svg class="avatar-podium" />
             </div>
 
@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import Vue from "vue"
-import{ mapState } from 'vuex'
+import { mapState } from 'vuex'
 import GuildSvg from '@/static/illustrations/user-guild.svg'
 import PodiumSvg from '@/static/illustrations/podium.svg'
 import HighligthSvg from '@/static/illustrations/highlight.svg'
@@ -47,9 +47,7 @@ export default Vue.extend({
             badgesList: ['geography', 'science', 'technology', 'history']
         }
     },
-    computed: {
-        ...mapState('user', ['avatar'])
-    },
+    computed: {...mapState('user', ['avatar', 'userData'])},
     mounted() {
         setTimeout(() => {
             this.event = true
@@ -89,7 +87,7 @@ export default Vue.extend({
             align-items: center;
             margin-left: 3vw;
             width: 65vw;
-            justify-content: space-between;
+            justify-content: space-around;
 
             p {
                 color: $white;
